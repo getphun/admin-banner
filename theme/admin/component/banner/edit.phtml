@@ -1,0 +1,45 @@
+<?php $this->partial('shared/header'); ?>
+
+<form method="post" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <div class="pull-right">
+                    <a class="btn btn-default" href="<?= $next ?>" type="button">Cancel</a>
+                    <button class="btn btn-primary">Save</button>
+                </div>
+                <h3><?= $title ?></h3>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <?= $this->form->field('name') ?>
+            <?= $this->form->field('placement', $placements) ?>
+            <?= $this->form->field('expired') ?>
+            <?= $this->form->field('type') ?>
+        </div>
+        <div class="col-md-4">
+            <div id="ban-type-1" class="ban-prop hidden">
+                <?= $this->form->field('ban_title'); ?>
+                <?= $this->form->field('ban_image'); ?>
+                <?= $this->form->field('ban_link'); ?>
+            </div>
+            <div id="ban-type-2" class="ban-prop hidden">
+                <?= $this->form->field('sou_text'); ?>
+            </div>
+            <div id="ban-type-3" class="ban-prop hidden">
+                <?= $this->form->field('ga_client'); ?>
+                <?= $this->form->field('ga_slot'); ?>
+                <?= $this->form->field('ga_format'); ?>
+            </div>
+            <div id="ban-type-4" class="ban-prop hidden">
+                <?= $this->form->field('fan_placementid'); ?>
+                <?= $this->form->field('fan_format'); ?>
+            </div>
+        </div>
+    </div>
+</form>
+
+<?php $this->partial('shared/footer'); ?>
