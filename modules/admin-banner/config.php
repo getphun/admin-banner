@@ -113,7 +113,8 @@ return [
                     1 => 'Banner',
                     2 => 'Source',
                     3 => 'Google Ads',
-                    4 => 'Facebook Audience Network'
+                    4 => 'Facebook Audience Network',
+                    5 => 'iFrame'
                 ],
                 'rules' => [
                     'required' => true
@@ -169,6 +170,21 @@ return [
                 'type'  => 'text',
                 'label' => 'Format',
                 'rules' => []
+            ],
+            
+            'ifr_src' => [
+                'type'  => 'url',
+                'label' => 'URL',
+                'rules' => []
+            ],
+            'ifr_time' => [
+                'type'  => 'number',
+                'label' => 'Timer',
+                'rules' => [
+                    'numeric' => [
+                        'min' => 0
+                    ]
+                ]
             ]
         ]
     ]

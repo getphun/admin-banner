@@ -12,7 +12,7 @@
         <div class="col-md-9">
             <div class="page-header">
                 <?php if($this->can_i->create_banner): ?>
-                <a class="btn btn-primary pull-right" href="<?= $this->router->to('adminBannerEdit', ['id'=>0], ['next'=>$reff]) ?>">Create New</a>
+                <a class="btn btn-primary pull-right" href="<?= $this->router->to('adminBannerEdit', ['id'=>0], ['ref'=>$reff]) ?>">Create New</a>
                 <?php endif; ?>
                 <h3>Banners</h3>
             </div>
@@ -32,7 +32,7 @@
                     <div class="btn-group btn-group-xs pull-right" role="group">
                         
                         <?php if($can_edit): ?>
-                        <a href="<?= $this->router->to('adminBannerEdit', ['id'=>$banner->id], ['next'=>$reff]) ?>" class="btn btn-default" title="Edit">
+                        <a href="<?= $this->router->to('adminBannerEdit', ['id'=>$banner->id], ['ref'=>$reff]) ?>" class="btn btn-default" title="Edit">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         </a>
                         <?php endif; ?>
@@ -43,7 +43,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="banner-<?= $banner->id ?>">
                             <li>
-                                <a href="<?= $this->router->to('adminBannerRemove', ['id'=>$banner->id], ['next'=>$reff]) ?>" data-confirm="Delete Confirmation" data-confirm-message="Are you sure want to delete this banner? This action can't be undone." title="Delete" aria-label="Delete">
+                                <a href="<?= $this->router->to('adminBannerRemove', ['id'=>$banner->id], ['ref'=>$reff]) ?>" data-confirm="Delete Confirmation" data-confirm-message="Are you sure want to delete this banner? This action can't be undone." title="Delete" aria-label="Delete">
                                     <i class="fa fa-trash" aria-hidden="true"></i> Delete
                                 </a>
                             </li>

@@ -35,7 +35,7 @@ class BannerController extends \AdminController
         $params = $this->_defaultParams();
         $params['title'] = 'Create New Banner';
         $params['jses'] = ['js/banner.js'];
-        $params['next'] = $this->req->getQuery('next') ?? $this->router->to('adminBanner');
+        $params['ref'] = $this->req->getQuery('ref') ?? $this->router->to('adminBanner');
         
         // get all placements
         $params['placements'] = [];
@@ -73,10 +73,7 @@ class BannerController extends \AdminController
         
         $this->fire('banner:'. $event, $object, $old);
         
-        $next = $this->req->getQuery('next');
-        if($next)
-            return $this->redirect($next);
-        return $this->redirectUrl('adminBanner');
+        return $this->redirect($params['ref']);
     }
     
     public function indexAction(){
@@ -107,9 +104,9 @@ class BannerController extends \AdminController
         $this->fire('banner:deleted', $object);
         Banner::remove($id);
         
-        $next = $this->req->getQuery('next');
-        if($next)
-            return $this->redirect($next);
+        $ref = $this->req->getQuery('ref');
+        if($ref)
+            return $this->redirect($ref);
         
         return $this->redirectUrl('adminBanner');
     }
