@@ -22,8 +22,7 @@ return [
     '_services' => [],
     '_autoload' => [
         'classes' => [
-            'AdminBanner\\Controller\\BannerController'   => 'modules/admin-banner/controller/BannerController.php',
-            'AdminBanner\\Event\\BannerEvent'             => 'modules/admin-banner/event/BannerEvent.php'
+            'AdminBanner\\Controller\\BannerController'   => 'modules/admin-banner/controller/BannerController.php'
         ],
         'files' => []
     ],
@@ -60,18 +59,6 @@ return [
                     ]
                 ]
             ]
-        ]
-    ],
-    
-    'events' => [
-        'banner:created' => [
-            'banner' => 'AdminBanner\\Event\\BannerEvent::created'
-        ],
-        'banner:updated' => [
-            'banner' => 'AdminBanner\\Event\\BannerEvent::updated'
-        ],
-        'banner:deleted' => [
-            'banner' => 'AdminBanner\\Event\\BannerEvent::deleted'
         ]
     ],
     
