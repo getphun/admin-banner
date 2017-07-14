@@ -67,6 +67,7 @@ class BannerController extends \AdminController
             if(false === ($id = Banner::create($object)))
                 throw new \Exception(Banner::lastError());
         }else{
+            $object->updated = null;
             if(false === Banner::set($object, $id))
                 throw new \Exception(Banner::lastError());
         }
