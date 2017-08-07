@@ -100,8 +100,7 @@ return [
                     1 => 'Banner',
                     2 => 'Source',
                     3 => 'Google Ads',
-                    4 => 'Facebook Audience Network',
-                    5 => 'iFrame'
+                    4 => 'iFrame'
                 ],
                 'rules' => [
                     'required' => true
@@ -143,17 +142,6 @@ return [
                 'rules' => []
             ],
             'ga_format' => [
-                'type'  => 'text',
-                'label' => 'Format',
-                'rules' => []
-            ],
-            
-            'fan_placementid' => [
-                'type'  => 'text',
-                'label' => 'Placement ID',
-                'rules' => []
-            ],
-            'fan_format' => [
                 'type'  => 'text',
                 'label' => 'Format',
                 'rules' => []
