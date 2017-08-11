@@ -57,7 +57,7 @@ class BannerController extends \AdminController
         
         if(false === ($form=$this->form->validate('admin-banner', $object)))
             return $this->respond('component/banner/edit', $params);
-        
+
         $object = object_replace($object, $form);
         
         $event = 'updated';

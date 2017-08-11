@@ -155,6 +155,9 @@ return [
             'ifr_time' => [
                 'type'  => 'number',
                 'label' => 'Timer',
+                'filters'=> [
+                    'number' => true
+                ],
                 'rules' => [
                     'numeric' => [
                         'min' => 0
