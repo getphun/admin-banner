@@ -131,19 +131,9 @@ return [
                 'rules' => []
             ],
             
-            'ga_client' => [
-                'type'  => 'text',
-                'label' => 'Client ID',
-                'rules' => []
-            ],
-            'ga_slot' => [
-                'type'  => 'text',
-                'label' => 'Slot',
-                'rules' => []
-            ],
-            'ga_format' => [
-                'type'  => 'text',
-                'label' => 'Format',
+            'ga_ins' => [
+                'type'  => 'textarea',
+                'label' => 'Tag INS',
                 'rules' => []
             ],
             
