@@ -107,6 +107,23 @@ return [
                 ]
             ],
             
+            'device' => [
+                'type'  => 'select',
+                'label' => 'Target Device',
+                'rules' => [
+                    'required' => true
+                ],
+                'options' => [
+                    1 => 'All',
+                    2 => 'Desktop Only',
+                    3 => 'Desktop and Tablet',
+                    4 => 'Desktop and Phone',
+                    5 => 'Tablet Only',
+                    6 => 'Tablet and Phone',
+                    7 => 'Phone Only'
+                ]
+            ],
+            
             'ban_title' => [
                 'type'  => 'text',
                 'label' => 'Title',
@@ -134,6 +151,7 @@ return [
             'ga_ins' => [
                 'type'  => 'textarea',
                 'label' => 'Tag INS',
+                'desc'  => 'Please put only tag <code>&lt;ins&gt;</code> from your gads code.',
                 'rules' => []
             ],
             
@@ -141,18 +159,6 @@ return [
                 'type'  => 'url',
                 'label' => 'URL',
                 'rules' => []
-            ],
-            'ifr_time' => [
-                'type'  => 'number',
-                'label' => 'Timer',
-                'filters'=> [
-                    'number' => true
-                ],
-                'rules' => [
-                    'numeric' => [
-                        'min' => 0
-                    ]
-                ]
             ]
         ]
     ]
