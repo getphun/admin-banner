@@ -3,6 +3,18 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
+            
+            <?php if($placements): ?>
+            <div class="list-group placement-selector">
+                <a href="#" class="list-group-item active" data-placement="*">All</a>
+                <?php foreach($placements as $place): ?>
+                <a href="#" class="list-group-item" data-placement="<?= $place ?>"><?= $place ?></a>
+                <?php endforeach; ?>
+            </div>
+            
+            <hr>
+            <?php endif; ?>
+            
             <div class="panel panel-default">
                 <div class="panel-body">
                     Total result: <?= number_format($total, 0, '.','.'); ?>
@@ -25,8 +37,18 @@
             
             <div class="list-group">
                 <?php foreach($banners as $banner): ?>
-                    <?php $expired = time() > strtotime($banner->expired); ?>
-                <div class="list-group-item<?= ($expired ? ' list-group-item-warning' : '') ?>">
+                    <?php
+                        $class = '';
+                        $expired   = strtotime($banner->expired);
+                        $timestart = strtotime($banner->timestart);
+                        $now       = time();
+                        
+                        if($timestart < $now && $expired < $now)
+                            $class = ' list-group-item-danger';
+                        elseif($timestart > $now && $expired > $now)
+                            $class = ' list-group-item-success';
+                    ?>
+                <div class="list-group-item<?= $class ?> placement-item" data-placement="<?= $banner->placement ?>">
                     
                     <?php if($can_edit || $can_delete): ?>
                     <div class="btn-group btn-group-xs pull-right" role="group">
@@ -57,7 +79,12 @@
                     <p class="list-group-item-text small">
                         <span title="Created"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> <?= date('M d, Y', strtotime($banner->created)) ?></span>
                         &middot;
-                        <span title="Expired"><i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <?= date('M d, Y', strtotime($banner->expired)) ?></span>
+                        <span title="Showtime">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <?= date('M d, Y', $timestart) ?>
+                            -
+                            <?= date('M d, Y', $expired) ?>
+                        </span>
                     </p>
                 </div>
                 <?php endforeach; ?>

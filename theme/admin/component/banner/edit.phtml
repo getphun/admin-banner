@@ -15,8 +15,15 @@
     
     <div class="row">
         <div class="col-md-4">
-            <?= $this->form->field('name') ?>
-            <?= $this->form->field('placement', $placements) ?>
+            <div class="row">
+                <div class="col-md-6">
+                    <?= $this->form->field('name') ?>
+                </div>
+                <div class="col-md-6">
+                    <?= $this->form->field('placement', $placements) ?>
+                </div>
+            </div>
+            <?= $this->form->field('timestart') ?>
             <?= $this->form->field('expired') ?>
             <?= $this->form->field('type') ?>
         </div>

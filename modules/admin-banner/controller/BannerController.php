@@ -88,6 +88,14 @@ class BannerController extends \AdminController
         $params['total'] = Banner::count();
         $params['reff']  = $this->req->url;
         
+        // get all placements
+        $params['placements'] = [];
+        $placements = Banner::countGroup('placement');
+        if($placements){
+            $params['placements'] = array_keys($placements);
+            $params['jses'] = ['js/banner.js'];
+        }
+        
         return $this->respond('component/banner/index', $params);
     }
     

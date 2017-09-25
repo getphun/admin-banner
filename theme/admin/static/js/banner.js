@@ -27,4 +27,23 @@ $(function(){
             elTD.val( $(this).val() );
         });
     }
+    
+    var el = $('.placement-selector');
+    if(el.get(0)){
+        el.children('a').click(function(){
+            var el = $(this);
+            var plc= el.data('placement');
+            
+            $('.placement-selector > a').removeClass('active');
+            el.addClass('active');
+            
+            if(plc == '*')
+                $('.placement-item').removeClass('hidden');
+            else{
+                $('.placement-item').addClass('hidden');
+                $('.placement-item[data-placement="'+plc+'"]').removeClass('hidden');
+            }
+            return false;
+        });
+    }
 })

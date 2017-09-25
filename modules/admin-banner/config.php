@@ -81,7 +81,14 @@ return [
             ],
             'placement' => [
                 'type'  => 'text',
-                'label' => 'Placemenent',
+                'label' => 'Placement',
+                'rules' => [
+                    'required' => true
+                ]
+            ],
+            'timestart' => [
+                'type'  => 'datetime',
+                'label' => 'Timestart',
                 'rules' => [
                     'required' => true
                 ]
@@ -151,7 +158,7 @@ return [
             'ga_ins' => [
                 'type'  => 'textarea',
                 'label' => 'Tag INS',
-                'desc'  => 'Please put only tag <code>&lt;ins&gt;</code> from your gads code.',
+                'desc'  => 'Please put only tag <code>&lt;ins&gt;</code> from your google adsense code.',
                 'rules' => []
             ],
             
