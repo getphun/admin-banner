@@ -43,6 +43,8 @@ $(function(){
                 $('.placement-item').addClass('hidden');
                 $('.placement-item[data-placement="'+plc+'"]').removeClass('hidden');
             }
+            var visible = $('.placement-item:not(.hidden)').length;
+            $('#banner-visible').text(visible.toLocaleString());
             return false;
         });
     }
