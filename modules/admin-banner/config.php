@@ -107,7 +107,8 @@ return [
                     1 => 'Banner',
                     2 => 'Source',
                     3 => 'Google Ads',
-                    4 => 'iFrame'
+                    4 => 'iFrame',
+                    5 => 'AdNow'
                 ],
                 'rules' => [
                     'required' => true
@@ -165,6 +166,18 @@ return [
             'ifr_src' => [
                 'type'  => 'url',
                 'label' => 'URL',
+                'rules' => []
+            ],
+            
+            'an_id' => [
+                'type'  => 'text',
+                'label' => 'Ad ID',
+                'rules' => []
+            ],
+            
+            'an_domain' => [
+                'type'  => 'text',
+                'label' => 'Ad Domain',
                 'rules' => []
             ]
         ]
